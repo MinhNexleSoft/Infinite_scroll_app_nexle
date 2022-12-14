@@ -41,7 +41,9 @@ const Post = ({ post }) => {
           }}
         >
           {post?.node?.last_update
-            ? `${moment(post.node.last_update).format("ll h:mm A")} IST`
+            ? `${moment(new Date(post.node.last_update) * 1000).format(
+                "ll h:mm A"
+              )} IST`
             : ""}
         </Typography>
       </CardContent>
